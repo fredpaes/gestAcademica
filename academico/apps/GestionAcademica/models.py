@@ -33,3 +33,7 @@ class Matricula(models.Model):
     Curso = models.ForeignKey(Curso, null=False, blank=False, on_delete=models.CASCADE)
     FechaMatricula = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        cadena = "{0} => {1}"
+        return cadena.format(self.Alumno, self.Curso.Nombre)
+
